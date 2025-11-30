@@ -1,11 +1,14 @@
 # iot-streaming-platform-aws
 
-📡 IoT Streaming Platform on AWS
+## Developer: Andrew Kremmidas — AWS Solutions Architect Associate
+
+IoT Streaming Platform on AWS
 Real-Time Data Ingestion • Analytics • Monitoring
-Developer: Andrew Kremmidas — AWS Solutions Architect Associate
+
 A highly scalable streaming pipeline built to ingest massive volumes of IoT device telemetry in real time, apply intelligent processing, store results efficiently, and visualize device health and patterns instantly.
 Designed with event-driven serverless architecture — no servers to manage, globally scalable.
-🚀 Core Capabilities
+
+Core Capabilities
 Capability	Why It Matters
 Real-time streaming ingestion	Mission-critical industrial & smart device analytics
 Serverless data processing	Auto-scale for millions of messages/sec
@@ -13,7 +16,8 @@ Time-series data storage	Fast lookup + trend insight
 Live monitoring dashboards	Business & operational visibility
 Secure device connectivity	Compliance-ready IoT security
 Used for: Smart Cities, Automotive, Healthcare Devices, Manufacturing Sensors, Consumer IoT fleets.
-🏗️ Architecture Overview
+
+Architecture Overview
  IoT Sensor Devices
         │
         ▼ (MQTT/WebSockets)
@@ -30,14 +34,16 @@ QuickSight + S3 Data Lake               Real-Time Monitoring API
 Optional enterprise add-ons:
 Machine Learning with SageMaker + anomaly detection
 Edge processing with Greengrass for offline sites
-🔐 Security + Compliance
+
+Security + Compliance
 ✔ Device identity via IoT Certificates
 ✔ AWS IoT Policies for scoped access
 ✔ KMS encryption for data at rest
 ✔ TLS encryption for data in transit
 ✔ CloudWatch & IoT Monitor audit logs
 Every device must prove who it is before data is accepted.
-📊 Data Flow Example
+
+Data Flow Example
 Stage	Action
 Device sends telemetry	MQTT publish → IoT Core
 Rule triggers forward	IoT Core → Kinesis Stream
@@ -45,7 +51,8 @@ Processing	Lambda parses, validates, enriches
 Persistence	DynamoDB stores most recent state
 Analytics	S3 lake + Athena query + QuickSight dashboards
 Latency target: < 1 second from device → insights
-🛠️ Project Structure
+
+Project Structure
 project-5/
 ├─ src/
 │  ├─ iot-device-simulator/
@@ -55,7 +62,8 @@ project-5/
 ├─ infra/
 │  ├─ cdk/terraform (coming soon)
 └─ README.md
-🔌 Example Telemetry Payload
+
+Example Telemetry Payload
 {
   "deviceId": "sensor-001",
   "timestamp": 1733000000,
@@ -64,7 +72,8 @@ project-5/
   "battery": 89
 }
 Lambda cleans and enriches fields (geo-tagging, alerts, anomalies).
-📈 Visual Insights
+
+Visual Insights
 Cloud dashboards show:
 Device battery health
 Temperature drift over time
@@ -79,7 +88,8 @@ python simulate.py \
   --rate 2 \
   --mqtt_url $IOT_ENDPOINT
 Simulates a growing fleet at increasing message loads.
-💸 Cost Efficiency
+
+Cost Efficiency
 AWS Service	Cost Strategy
 Kinesis	Auto-scaling shards
 DynamoDB	On-demand billing & TTL cleanup
@@ -87,12 +97,14 @@ S3	Lifecycle → Glacier
 Lambda	Pay per message batch
 QuickSight	Reader accounts for dashboards only
 Designed for global scale at minimal operational overhead.
-🧩 Future Enhancements
+
+Future Enhancements
 SageMaker anomaly detection for predictive maintenance
 Greengrass edge deployments for factories & remote sites
 OTA (over-the-air) firmware update pipeline
 Digital twin system with Device Shadow analytics
 WebSockets dashboard for live updates
-🎯 Project Goal
+
+Overall Project Goal
 Deliver a production-grade IoT streaming pipeline that can scale to millions of devices, while remaining secure, reliable, and cost-efficient.
 Perfect for industries transforming via IoT data intelligence.
